@@ -8,7 +8,7 @@
 // - package.json
 // - README.md
 
-// 1. custom-thermostat-card.ts (main card logic)
+
 import { html, LitElement, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { HomeAssistant, LovelaceCardEditor } from "custom-card-helpers";

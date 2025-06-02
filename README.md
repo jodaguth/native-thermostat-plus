@@ -1,4 +1,4 @@
-// 6. README.md
+
 # Native Thermostat Plus
 
 A native-style Home Assistant thermostat card that lets you override the current temperature sensor. For Mini Splits that use "Follow me". Choose a Room sensor to display as current temperature instead of sensor in highwall head.   
