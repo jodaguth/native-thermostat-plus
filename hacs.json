@@ -1,0 +1,9 @@
+// 5. hacs.json
+{
+  "name": "Native Thermostat Plus",
+  "content_in_root": false,
+  "filename": "dist/custom-thermostat-card.js",
+  "render_readme": true,
+  "domains": ["lovelace"],
+  "country": "ca"
+}

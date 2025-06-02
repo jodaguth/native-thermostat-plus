@@ -1,0 +1,22 @@
+// 4. package.json
+{
+  "name": "native-thermostat-plus",
+  "version": "1.0.0",
+  "description": "Native-style thermostat card with custom temperature sensor support",
+  "main": "dist/custom-thermostat-card.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "custom-card-helpers": "^1.10.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "rollup": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}
