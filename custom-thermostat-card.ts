@@ -22,7 +22,7 @@ export class CustomThermostatCard extends LitElement {
     await customElements.whenDefined("hui-thermostat-card");
 
     const card = document.createElement("hui-thermostat-card");
-    card.setConfig({ entity: this.config.entity });
+    (card as any).setConfig({ entity: this.config.entity });
 
     const customSensor = this.config.current_temperature_entity;
     const realClimate = this.hass.states[this.config.entity];
