@@ -30,3 +30,5 @@ Place the output in `/config/www` and add a resource in Home Assistant:
 url: /local/custom-thermostat-card.js
 type: module
 ```
+
+Or use HACS with `filename: custom-thermostat-card.js` at the repo root.
