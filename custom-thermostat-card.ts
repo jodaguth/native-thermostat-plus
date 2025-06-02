@@ -45,11 +45,26 @@ export class CustomThermostatCard extends LitElement {
       },
     };
 
+    const originalState = this.hass.states[this.config.entity];
+    const patchedState = {
+      ...originalState,
+      attributes: {
+        ...originalState.attributes,
+        current_temperature: customSensor
+          ? Number(this.hass.states[customSensor]?.state)
+          : originalState.attributes.current_temperature,
+      },
+    };
+
+    const realHass = { ...this.hass };
+    realHass.states = {
+      ...this.hass.states,
+      [this.config.entity]: patchedState,
+    };
+
     const castCard = card as any;
-    castCard.hass = fakeHass;
-    castCard._config = { entity: this.config.entity };
-    if (castCard._updateProperties) castCard._updateProperties(fakeHass);
-    if (castCard._setEntityConfig) castCard._setEntityConfig({ entity: this.config.entity });
+    castCard.setConfig({ entity: this.config.entity });
+    castCard.hass = realHass;
 
     this.innerHTML = "";
     this.appendChild(card);
