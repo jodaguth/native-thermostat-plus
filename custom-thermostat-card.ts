@@ -45,7 +45,11 @@ export class CustomThermostatCard extends LitElement {
       },
     };
 
-    (card as any).hass = fakeHass;
+    const castCard = card as any;
+    castCard.hass = fakeHass;
+    castCard._config = { entity: this.config.entity };
+    if (castCard._updateProperties) castCard._updateProperties(fakeHass);
+    if (castCard._setEntityConfig) castCard._setEntityConfig({ entity: this.config.entity });
 
     this.innerHTML = "";
     this.appendChild(card);
